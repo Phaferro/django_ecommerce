@@ -17,7 +17,7 @@ class ProductManager(models.Manager):
         return self.get_queryset().active()
 
     def featured(self):
-        #return self.get_queryset().filter(featured = True)
+        return self.get_queryset().filter(featured = True)
         return self.get_queryset().featured()
 
     def get_by_id(self, id):
@@ -41,6 +41,4 @@ class Product(models.Model): #product_category
     #python 3
     def __str__(self):
         return self.title
-    #python 2
-    def __unicode__(self):
-        return self.title
+    
