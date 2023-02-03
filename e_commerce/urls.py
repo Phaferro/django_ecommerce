@@ -20,12 +20,14 @@ urlpatterns = [
         path('login/', login_page),
         path('register/', register_page),
         path('featured/', ProductFeaturedListView.as_view()),
-        path('featured/<int:pk>/', ProductFeaturedDetailView.as_view()),
+        path('products/<int:pk>/', ProductDetailView.as_view(), name='detail'),
+        path('featured/<int:pk>/', ProductFeaturedDetailView.as_view(), name='detail'),
         path('products/', ProductListView.as_view()),
         path('products-fbv/', product_list_view), 
         path('products/', ProductDetailView.as_view()),
         path('products-fbv/', product_detail_view), 
 	    path('admin/', admin.site.urls),
+        #path('products/1', ProductFeaturedListView.as_view()),
         ]
 
 if settings.DEBUG:

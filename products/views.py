@@ -15,9 +15,9 @@ class ProductFeaturedDetailView(DetailView):
     queryset = Product.objects.all().featured()
     template_name = "products/featured-detail.html"
 
-    #def get_queryset(self, *args, **kwargs):
+    def get_queryset(self, *args, **kwargs):
         #request = self.request
-        #return Product.objects.featured()
+        return Product.objects.featured()
 
 #Class Based View
 class ProductListView(ListView):
@@ -50,10 +50,10 @@ class ProductDetailView(DetailView):
         return context
 
     def get_object(self, *args, **kwargs):
-        pk = self.kwargs.get('pk')
+        pk = self.kwargs.get('pk') 
         instance = Product.objects.get_by_id(pk)
-        if instance is None:
-            raise Http404("Esse produto não existe!")
+        #if instance is None:
+            #raise Http404("Esse produto não existe!")
         return instance
 
 #Function Based View
