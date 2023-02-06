@@ -26,7 +26,7 @@ urlpatterns = [
         path('products-fbv/', product_list_view), 
         path('products/', ProductDetailView.as_view()),
         path('products-fbv/', product_detail_view), 
-	    path('admin/', admin.site.urls),
+	path('admin/', admin.site.urls),
         #path('products/1', ProductFeaturedListView.as_view()),
         ]
 
